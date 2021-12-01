@@ -33,5 +33,15 @@ namespace Ucu.Poo.Defense
         {
             this.items.Remove(item);
         }
+        public string AsText()
+        {
+            StringBuilder texto= new StringBuilder(); 
+            texto.Append($"Fecha:{this.EndDate}\n"); 
+            foreach (OfferItem item in items)
+            {
+                texto.Append($"{item.Quantity} de {item.Residue.Name} a ${item.Price}"); 
+            }
+            return texto.ToString(); 
+        }
     }
 }
