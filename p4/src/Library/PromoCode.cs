@@ -24,7 +24,14 @@ namespace Ucu.Poo.Defense
 
         public PromoCode(int amount)
         {
-            this.SubTotal = amount;
+            if (amount > 0)
+            {
+                throw new ArgumentException(); 
+            }
+            else
+            {
+                this.SubTotal = amount; 
+            }
         }
     }
 }

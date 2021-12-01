@@ -49,5 +49,14 @@ namespace Ucu.Poo.Defense
         {
             this.items.Remove(item);
         }
+        public PromoCode AddDiscount(int discount)
+        {
+            try
+            {
+                PromoCode item = new PromoCode(discount); 
+                this.items.Add(item); 
+                return item; 
+            }
+        }
     }
 }
