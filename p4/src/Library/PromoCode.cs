@@ -2,9 +2,9 @@ using System;
 
 namespace Ucu.Poo.Defense
 {
-    public class PromoCode
+    public class PromoCode: IOfferItem
     {
-        private string code {get;set;}
+        //private string code {get;set;}
         private int amount;
 
         public int SubTotal
@@ -15,13 +15,15 @@ namespace Ucu.Poo.Defense
             }
             set
             {
-                this.amount = value;
+                if (value>0)
+                {
+                    throw new ArgumentException(); 
+                }
             }
         }
 
-        public PromoCode(string code, int amount)
+        public PromoCode(int amount)
         {
-            this.code = code;
             this.SubTotal = amount;
         }
     }
