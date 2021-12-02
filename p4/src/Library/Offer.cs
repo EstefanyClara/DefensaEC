@@ -51,12 +51,8 @@ namespace Ucu.Poo.Defense
         }
         public PromoCode AddDiscount(int discount)
         {
-            try
-            {
-                PromoCode item = new PromoCode(discount); 
-                this.items.Add(item); 
-                return item; 
-            }
+            PromoCode discountItem= new PromoCode(discount); 
+           
         }
     }
 }
